@@ -53,7 +53,7 @@ $(document).ready(function(){
         var citySearch = $('#city-search').val().trim();
          // API key and url
          var key = "abc6459aa5ca92773c2b57151b729417";
-         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="
+         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="
              + citySearch+"&appid="+key;
         // Perfoming an AJAX GET request to our queryURL
         $.ajax({
@@ -74,7 +74,7 @@ $(document).ready(function(){
         var searchKey = $('#city-search').val().trim();
          // API key and url
         var key = "abc6459aa5ca92773c2b57151b729417";
-        var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+searchKey+"&appid="+key;
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+searchKey+"&appid="+key;
         // Perfoming an AJAX GET request to our queryURL
         $.ajax({
         url: queryURL,
@@ -85,7 +85,7 @@ $(document).ready(function(){
                 var dates = response.list[i].dt_txt;
                 var temp = response.list[i].main.temp;
                 var icon = response.list[i].weather[0].icon;
-                var iconURL= "http://openweathermap.org/img/wn/"+icon+"@2x.png"
+                var iconURL= "https://openweathermap.org/img/wn/"+icon+"@2x.png"
                 var humidity = response.list[i].main.humidity;
                 var shortDate = short(dates,10);
                 $("#day-"+i).html("<strong>"+shortDate+"</strong>"
@@ -114,7 +114,7 @@ $(document).ready(function(){
         console.log($(this).val());
          // API key and url
          var key = "abc6459aa5ca92773c2b57151b729417";
-         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="
+         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="
              + citySearch+"&appid="+key;
         // Perfoming an AJAX GET request to our queryURL
         $.ajax({
@@ -136,7 +136,7 @@ $(document).ready(function(){
         var searchKey = $(this).val().trim();
          // API key and url
         var key = "abc6459aa5ca92773c2b57151b729417";
-        var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+searchKey+"&appid="+key;
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+searchKey+"&appid="+key;
         // Perfoming an AJAX GET request to our queryURL
         $.ajax({
         url: queryURL,
@@ -147,7 +147,7 @@ $(document).ready(function(){
                 var dates = response.list[i].dt_txt;
                 var temp = response.list[i].main.temp;
                 var icon = response.list[i].weather[0].icon;
-                var iconURL= "http://openweathermap.org/img/wn/"+icon+"@2x.png"
+                var iconURL= "https://openweathermap.org/img/wn/"+icon+"@2x.png"
                 var humidity = response.list[i].main.humidity;
                 var shortDate = short(dates,10);
                 $("#day-"+i).html("<strong>"+shortDate+"</strong>"
