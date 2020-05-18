@@ -22,9 +22,7 @@ $(document).ready(function(){
     function stored(item) {
         localStorage.setItem('cities',JSON.stringify(item));
     }
-    var cities =[];
-    
-
+    var cities = JSON.parse(localStorage.getItem("cities"));
     // function to render cities
     function renderCities(Cities) {
         $('#history-search').html("");
@@ -39,6 +37,18 @@ $(document).ready(function(){
         }
         
     }
+    function renderLastSearch() {
+        for (let i=0;i<=cities.length;i++) {
+            if (cities[i] !== undefined) {
+                var li = $('<div>');
+                li.attr('id','History');
+                var p = li.html(cities[i]+'<hr>');
+                $('#history-search').append(p);
+            }
+            
+        }
+    }
+    renderLastSearch();
     //function to get item from local storage
     function getLocalStorage() {
         var storedCities = JSON.parse(localStorage.getItem("cities"));
