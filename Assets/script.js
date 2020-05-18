@@ -22,7 +22,7 @@ $(document).ready(function(){
     function stored(item) {
         localStorage.setItem('cities',JSON.stringify(item));
     }
-    var cities = JSON.parse(localStorage.getItem("cities"));
+    var cities = JSON.parse(localStorage.getItem("cities"))|| [];
     // function to render cities
     function renderCities(Cities) {
         $('#history-search').html("");
@@ -110,10 +110,13 @@ $(document).ready(function(){
         event.preventDefault();
         var searchedKey = $('#city-search').val().trim();
         console.log(searchedKey);
-        cities.push(searchedKey);
-        console.log(cities);
-        stored(cities);
-        getLocalStorage();
+        if (cities.includes(searchedKey)=== false) {
+            cities.push(searchedKey);
+            console.log(cities);
+            stored(cities);
+            getLocalStorage();
+        }
+        
 
     })
     // click om history search to display current weather info
