@@ -1,12 +1,11 @@
 
 $(document).ready(function(){   
-    var today = new Date();
-    var d = today.getDate();
-    var m = today.getMonth();
-    var y = today.getFullYear();
+   var d = new Date();
+   var n = d.getTime();
+   var t = new Date(n);
     function printCity() {
         var citySearch = $('#city-search').val().trim();
-        $('#city-name').html(citySearch + ' '+'('+m+'/'+d+'/'+y+")");
+        $('#city-name').html(citySearch + ' '+n);
     }
     //function to shorten dates retrieved from API response
     function short(name, numberOfChar) {
