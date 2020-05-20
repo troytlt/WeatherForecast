@@ -5,7 +5,7 @@ $(document).ready(function(){
    var t = new Date(n);
     function printCity() {
         var citySearch = $('#city-search').val().trim();
-        $('#city-name').html(citySearch + ' '+n);
+        $('#city-name').html(citySearch + ' '+t);
     }
     //function to shorten dates retrieved from API response
     function short(name, numberOfChar) {
